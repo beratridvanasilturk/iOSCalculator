@@ -95,6 +95,25 @@ class ViewController: UIViewController {
         
         divideButtonTapped = true
         
+        var divideResult = 0
+        
+        if firstClick == 1 {
+            
+            resultNumber = firstNumber
+            divideResult = resultNumber
+            print("FIRST CLICK'TE divide icindeki result number:", resultNumber, "first click:", firstClick)
+            
+        } else {
+            
+            resultNumber = firstNumber / secondNumber
+            divideResult = resultNumber
+            print("SECOND CLICK'TE divide icindeki result number:", resultNumber, "else icindeki first click:", firstClick)
+        }
+        
+        resultNumber = divideResult
+        
+            print("addition icindeki result number:", resultNumber)
+        
     }
     
     @IBAction func minusButton(_ sender: UIButton) {
@@ -113,12 +132,12 @@ class ViewController: UIViewController {
             
             resultNumber -= secondNumber
             minusResult = resultNumber
-            print("SECOND CLICK'TE addition icindeki result number:", resultNumber, "else icindeki first click:", firstClick)
+            print("SECOND CLICK'TE minus icindeki result number:", resultNumber, "else icindeki first click:", firstClick)
         }
         
         resultNumber = minusResult
         
-            print("addition icindeki result number:", resultNumber)
+            print("minus icindeki result number:", resultNumber)
         
     }
     
