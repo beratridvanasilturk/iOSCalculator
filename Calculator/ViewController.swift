@@ -77,6 +77,12 @@ class ViewController: UIViewController {
         firstNumber = 0
         secondNumber = 0
         
+        additionButtonTapped = false
+        minusButtonTapped = false
+        percentButtonTapped = false
+        multiplyButtonTapped = false
+        divideButtonTapped = false
+        
     }
     
     @IBAction func percentButton(_ sender: UIButton) {
@@ -88,6 +94,26 @@ class ViewController: UIViewController {
     @IBAction func multiplyButton(_ sender: UIButton) {
         
         multiplyButtonTapped = true
+        
+        var multiplyResult = 0
+        
+        if firstClick == 1 {
+            
+            resultNumber = firstNumber
+            multiplyResult = resultNumber
+            print("FIRST CLICK'TE multiply icindeki result number:", resultNumber, "first click:", firstClick)
+            
+        } else {
+            
+            resultNumber = firstNumber * secondNumber
+            multiplyResult = resultNumber
+            print("SECOND CLICK'TE multiply icindeki result number:", resultNumber, "else icindeki first click:", firstClick)
+        }
+        
+        resultNumber = multiplyResult
+        
+            print("multiply icindeki result number:", resultNumber)
+        
         
     }
     
@@ -112,7 +138,7 @@ class ViewController: UIViewController {
         
         resultNumber = divideResult
         
-            print("addition icindeki result number:", resultNumber)
+            print("divide icindeki result number:", resultNumber)
         
     }
     
