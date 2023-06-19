@@ -5,13 +5,16 @@
 //  Created by Berat Rıdvan Asiltürk on 18.06.2023.
 //
 
+// TODO: Maksimum 1 Hane ile calisiyor bu sorun cozulecek
+
 import UIKit
 
 class ViewController: UIViewController {
     
     @IBOutlet var resultLabel: UILabel! {
         didSet {
-            resultLabel.text = ("\(resultNumber)")
+            
+            resultLabel.text = "\(resultNumber)"
             print("IBOutlet ici result number : \(resultNumber)")
         }
     }
@@ -21,10 +24,9 @@ class ViewController: UIViewController {
     }
     
     var numbers = [0,1,2,3,4,5,6,7,8,9]
-    var firstNumber : Int = 0
-    var secondNumber: Int = 0
-    var resultNumber: Int = 0
-    var groupNumbers: Array<Int> = []
+    var firstNumber : Double = 0
+    var secondNumber: Double = 0
+    var resultNumber: Double = 0
     var firstClick = 0
 
     var additionButtonTapped : Bool = false
@@ -32,7 +34,6 @@ class ViewController: UIViewController {
     var percentButtonTapped: Bool = false
     var multiplyButtonTapped: Bool = false
     var divideButtonTapped: Bool = false
-    
     
     func equalType() {
         
@@ -55,7 +56,7 @@ class ViewController: UIViewController {
         if divideButtonTapped == true {
             divideButton(UIButton())
         } else {
-            print("Button algilanamadi")
+            print("Button unidentified")
         }
     }
     
@@ -71,11 +72,10 @@ class ViewController: UIViewController {
     @IBAction func ceButton(_ sender: UIButton) {
         
         resultLabel.text = "0"
-        resultNumber = 0
-        groupNumbers.removeAll()
+        resultNumber = 0.0
         firstClick = 0
-        firstNumber = 0
-        secondNumber = 0
+        firstNumber = 0.0
+        secondNumber = 0.0
         
         additionButtonTapped = false
         minusButtonTapped = false
@@ -89,28 +89,41 @@ class ViewController: UIViewController {
         
         percentButtonTapped = true
         
+        
+        
+        if firstClick == 1 {
+            
+            resultNumber = firstNumber
+            
+            print("FIRST CLICK'TE percent icindeki result number:", resultNumber, "first click:", firstClick)
+            
+        } else {
+            
+            resultNumber = ((firstNumber * secondNumber) / 100)
+            
+            print("SECOND CLICK'TE percent icindeki result number:", resultNumber, "else icindeki first click:", firstClick)
+        }
+        
+        
+        
+            print("percent icindeki result number:", resultNumber)
+        
     }
     
     @IBAction func multiplyButton(_ sender: UIButton) {
         
         multiplyButtonTapped = true
         
-        var multiplyResult = 0
-        
         if firstClick == 1 {
             
             resultNumber = firstNumber
-            multiplyResult = resultNumber
             print("FIRST CLICK'TE multiply icindeki result number:", resultNumber, "first click:", firstClick)
             
         } else {
             
             resultNumber = firstNumber * secondNumber
-            multiplyResult = resultNumber
             print("SECOND CLICK'TE multiply icindeki result number:", resultNumber, "else icindeki first click:", firstClick)
         }
-        
-        resultNumber = multiplyResult
         
             print("multiply icindeki result number:", resultNumber)
         
@@ -121,22 +134,16 @@ class ViewController: UIViewController {
         
         divideButtonTapped = true
         
-        var divideResult = 0
-        
         if firstClick == 1 {
             
             resultNumber = firstNumber
-            divideResult = resultNumber
             print("FIRST CLICK'TE divide icindeki result number:", resultNumber, "first click:", firstClick)
             
         } else {
             
             resultNumber = firstNumber / secondNumber
-            divideResult = resultNumber
             print("SECOND CLICK'TE divide icindeki result number:", resultNumber, "else icindeki first click:", firstClick)
         }
-        
-        resultNumber = divideResult
         
             print("divide icindeki result number:", resultNumber)
         
@@ -146,22 +153,22 @@ class ViewController: UIViewController {
         
         minusButtonTapped = true
         
-        var minusResult = 0
+//        var minusResult = 0
         
         if firstClick == 1 {
             
             resultNumber = firstNumber
-            minusResult = resultNumber
+//            minusResult = Int(resultNumber)
             print("FIRST CLICK'TE minus icindeki result number:", resultNumber, "first click:", firstClick)
             
         } else {
             
             resultNumber -= secondNumber
-            minusResult = resultNumber
+//            minusResult = Int(resultNumber)
             print("SECOND CLICK'TE minus icindeki result number:", resultNumber, "else icindeki first click:", firstClick)
         }
         
-        resultNumber = minusResult
+//        resultNumber = Double(minusResult)
         
             print("minus icindeki result number:", resultNumber)
         
@@ -176,17 +183,17 @@ class ViewController: UIViewController {
         if firstClick == 1 {
             
             resultNumber += firstNumber
-            additionResult = resultNumber
+            additionResult = Int(resultNumber)
             print("FIRST CLICK'TE addition icindeki result number:", resultNumber, "first click:", firstClick)
             
         } else {
             
             resultNumber += secondNumber
-            additionResult = resultNumber
+            additionResult = Int(resultNumber)
             print("SECOND CLICK'TE addition icindeki result number:", resultNumber, "else icindeki first click:", firstClick)
         }
         
-        resultNumber = additionResult
+        resultNumber = Double(additionResult)
         
             print("addition icindeki result number:", resultNumber)
         
@@ -198,13 +205,13 @@ class ViewController: UIViewController {
         if firstClick == 0 {
             
             let firstZeroNumber = numbers[0]
-            firstNumber = firstZeroNumber
+            firstNumber = Double(firstZeroNumber)
             firstClick = 1
             
         } else {
             
             let secondZeroNumber = numbers[0]
-            secondNumber = secondZeroNumber
+            secondNumber = Double(secondZeroNumber)
             firstClick += 1
         }
     }
@@ -214,14 +221,14 @@ class ViewController: UIViewController {
         if firstClick == 0 {
             
             let firstOneNumber = numbers[1]
-            firstNumber = firstOneNumber
+            firstNumber = Double(firstOneNumber)
             resultLabel.text = "\(firstOneNumber)"
             firstClick = 1
             
         } else {
             
             let secondOneNumber = numbers[1]
-            secondNumber = secondOneNumber
+            secondNumber = Double(secondOneNumber)
             resultLabel.text = "\(secondOneNumber)"
             firstClick += 1
         }
@@ -232,14 +239,14 @@ class ViewController: UIViewController {
         if firstClick == 0 {
             
             let firstTwoNumber = numbers[2]
-            firstNumber = firstTwoNumber
+            firstNumber = Double(firstTwoNumber)
             resultLabel.text = "\(firstTwoNumber)"
             firstClick = 1
             
         } else {
             
             let secondTwoNumber = numbers[2]
-            secondNumber = secondTwoNumber
+            secondNumber = Double(secondTwoNumber)
             resultLabel.text = "\(secondTwoNumber)"
             firstClick += 1
         }
@@ -249,14 +256,14 @@ class ViewController: UIViewController {
         if firstClick == 0 {
             
             let firstThreeNumber = numbers[3]
-            firstNumber = firstThreeNumber
+            firstNumber = Double(firstThreeNumber)
             resultLabel.text = "\(firstThreeNumber)"
             firstClick = 1
             
         } else {
             
             let secondThreeNumber = numbers[3]
-            secondNumber = secondThreeNumber
+            secondNumber = Double(secondThreeNumber)
             resultLabel.text = "\(secondThreeNumber)"
             firstClick += 1
         }
@@ -266,14 +273,14 @@ class ViewController: UIViewController {
         if firstClick == 0 {
             
             let firstFourNumber = numbers[4]
-            firstNumber = firstFourNumber
+            firstNumber = Double(firstFourNumber)
             resultLabel.text = "\(firstFourNumber)"
             firstClick = 1
             
         } else {
             
             let secondFourNumber = numbers[4]
-            secondNumber = secondFourNumber
+            secondNumber = Double(secondFourNumber)
             resultLabel.text = "\(secondFourNumber)"
             firstClick += 1
         }
@@ -283,14 +290,14 @@ class ViewController: UIViewController {
         if firstClick == 0 {
             
             let firstFiveNumber = numbers[5]
-            firstNumber = firstFiveNumber
+            firstNumber = Double(firstFiveNumber)
             resultLabel.text = "\(firstFiveNumber)"
             firstClick = 1
             
         } else {
             
             let secondFiveNumber = numbers[5]
-            secondNumber = secondFiveNumber
+            secondNumber = Double(secondFiveNumber)
             resultLabel.text = "\(secondFiveNumber)"
             firstClick += 1
         }
@@ -300,14 +307,14 @@ class ViewController: UIViewController {
         if firstClick == 0 {
             
             let firstSixNumber = numbers[6]
-            firstNumber = firstSixNumber
+            firstNumber = Double(firstSixNumber)
             resultLabel.text = "\(firstSixNumber)"
             firstClick = 1
             
         } else {
             
             let secondSixNumber = numbers[6]
-            secondNumber = secondSixNumber
+            secondNumber = Double(secondSixNumber)
             resultLabel.text = "\(secondSixNumber)"
             firstClick += 1
         }
@@ -317,14 +324,14 @@ class ViewController: UIViewController {
         if firstClick == 0 {
             
             let firstSevenNumber = numbers[7]
-            firstNumber = firstSevenNumber
+            firstNumber = Double(firstSevenNumber)
             resultLabel.text = "\(firstSevenNumber)"
             firstClick = 1
             
         } else {
             
             let secondSevenNumber = numbers[7]
-            secondNumber = secondSevenNumber
+            secondNumber = Double(secondSevenNumber)
             resultLabel.text = "\(secondSevenNumber)"
             firstClick += 1
         }
@@ -334,14 +341,14 @@ class ViewController: UIViewController {
         if firstClick == 0 {
             
             let firstEightNumber = numbers[8]
-            firstNumber = firstEightNumber
+            firstNumber = Double(firstEightNumber)
             resultLabel.text = "\(firstEightNumber)"
             firstClick = 1
             
         } else {
             
             let secondEightNumber = numbers[8]
-            secondNumber = secondEightNumber
+            secondNumber = Double(secondEightNumber)
             resultLabel.text = "\(secondEightNumber)"
             firstClick += 1
         }
@@ -351,20 +358,27 @@ class ViewController: UIViewController {
         if firstClick == 0 {
             
             let firstNineNumber = numbers[9]
-            firstNumber = firstNineNumber
+            firstNumber = Double(firstNineNumber)
             resultLabel.text = "\(firstNineNumber)"
             firstClick = 1
             
         } else {
             
             let secondNineNumber = numbers[9]
-            secondNumber = secondNineNumber
+            secondNumber = Double(secondNineNumber)
             resultLabel.text = "\(secondNineNumber)"
             firstClick += 1
         }
     }
     
     @IBAction func dotButton(_ sender: UIButton) {
+        
+        var dot = "."
+        
+        var percentButton = percentButtonTapped
+        var multiplyButton = multiplyButtonTapped
+        // Logic hakkinda dusunulecek
+        
     }
     
 }
