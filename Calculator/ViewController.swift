@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    typealias AdditionHandler = () -> Int
+    
     @IBOutlet var resultLabel: UILabel! {
         didSet {
             resultLabel.text = ("\(resultNumber)")
@@ -19,22 +21,32 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    
+        
     }
     
     var numbers = [0,1,2,3,4,5,6,7,8,9]
     
-    var firstNumber : Int = 0
-    var secondNumber: Int = 0
-    var resultNumber: Array<Int> = []
-    var groupNumbers: Array<Int> = []
+    var firstNumber : Double = 0
+    var secondNumber: Double = 0
+    var resultNumber: Double = 0
+//    var groupNumbers: Array<Int> = []
     var firstClick = 0
     var secondClick = 0
-//    var islem = additionButton(ViewController)
+
+    func equalType() {
+        additionButton(UIButton())
+
+    }
     
     @IBAction func ceButton(_ sender: UIButton) {
         resultLabel.text = "0"
-        resultNumber = []
-        groupNumbers.removeAll()
+        resultNumber = 0
+//        groupNumbers.removeAll()
+        firstClick = 0
+        secondClick = 0
+        firstNumber = 0
+        secondNumber = 0
         
     }
     @IBAction func percentButton(_ sender: UIButton) {
@@ -48,26 +60,30 @@ class ViewController: UIViewController {
     }
     @IBAction func additionButton(_ sender: UIButton) {
         
-        var additionResult: Array<Int> = []
+//        var additionResult: Array<Int> = []
+        
         if firstClick == 1 {
-            additionResult.append(firstNumber)
+            resultNumber = firstNumber
+//            resultNumber.append(firstNumber)
+//            additionResult.append(firstNumber)
         } else {
-            additionResult.append(secondNumber)
+            resultNumber = secondNumber
+//            resultNumber.append(secondNumber)
+//            additionResult.append(secondNumber)
         }
-        resultNumber = additionResult
         
+//        resultNumber = additionResult
         
-//        if groupNumbers.count == 2 {
-//            var additionResult = groupNumbers.first! + groupNumbers.last!
-//            resultNumber = additionResult
             print("addition icindeki result number:", resultNumber)
-//        }
         
       
         
     }
     
     @IBAction func equalButton(_ sender: UIButton) {
+        
+        equalType()
+        
         resultLabel.text = "\(resultNumber)"
         print("equal buttondaki result number:", resultNumber)
     }
@@ -75,25 +91,31 @@ class ViewController: UIViewController {
     
     @IBAction func zeroButton(_ sender: UIButton) {
         if firstClick == 0 {
-            let zeroNumber = numbers[0]
-            firstNumber = zeroNumber
+//            let firstZeroNumber = numbers[0]
+            firstNumber = 0
+//            firstNumber = firstZeroNumber
 //            groupNumbers.append(zeroNumber)
             firstClick += 1
         } else {
-            let zeroNumber = numbers[0]
-            secondNumber = zeroNumber
+            
+            secondNumber = 0
+//            let secondZeroNumber = numbers[0]
+//            secondNumber = secondZeroNumber
 //            groupNumbers.append(zeroNumber)
         }
     }
     @IBAction func oneButton(_ sender: UIButton) {
         if firstClick == 0 {
-            let oneNumber = numbers[1]
-            firstNumber = oneNumber
+            
+            firstNumber = 1
+//            let firstOneNumber = numbers[1]
+//            firstNumber = firstOneNumber
 //            groupNumbers.append(oneNumber)
             firstClick += 1
         } else {
-            let oneNumber = numbers[1]
-            secondNumber = oneNumber
+            secondNumber = 1
+//            let secondOneNumber = numbers[1]
+//            secondNumber = secondOneNumber
 //            groupNumbers.append(oneNumber)
         }
         
@@ -103,14 +125,16 @@ class ViewController: UIViewController {
     }
     @IBAction func twoButton(_ sender: UIButton) {
         if firstClick == 0 {
-            let twoNumber = numbers[2]
-            firstNumber = twoNumber
+            firstNumber = 2
+//            let firstTwoNumber = numbers[2]
+//            firstNumber = firstTwoNumber
 //            groupNumbers.append(twoNumber)
             firstClick += 1
-            print("\(twoNumber)")
+//            print("\(firstTwoNumber)")
         } else {
-            let twoNumber = numbers[2]
-            secondNumber = twoNumber
+            secondNumber = 2
+//            let secondTwoNumber = numbers[2]
+//            secondNumber = secondTwoNumber
 //            groupNumbers.append(twoNumber)
         }
         
@@ -153,4 +177,5 @@ class ViewController: UIViewController {
     @IBAction func dotButton(_ sender: UIButton) {
     }
 }
+
 
