@@ -16,6 +16,10 @@ var firstClick = 0
 var resultString = ""
 
 var additionResult: Double = 0
+var minusResult: Double = 0
+var percentResult: Double = 0
+var multiplyResult: Double = 0
+var divideResult: Double = 0
 
 var additionButtonTapped : Bool = false
 var minusButtonTapped: Bool = false
@@ -38,16 +42,24 @@ func getOperators(for calculateType: Operators) {
     switch calculateType {
         
     case .Addition: additionResult += resultNumber
-        print("Addition icindeki addition result:", additionResult)
+        print("Addition icindeki  result:", additionResult)
         
     case .Minus:
-        print(";")
+        minusResult += resultNumber
+        print("Minus icindeki minus result:", additionResult)
+        
     case .Percent:
-        print(";")
+        percentResult += resultNumber
+        print("Percent icindeki percent result:", additionResult)
+        
     case .Multiply:
-        print(";")
+        multiplyResult += resultNumber
+        print("Multiply icindeki multiply result:", additionResult)
+        
     case .Divide:
-        print(";")
+        divideResult += resultNumber
+        print("Divide icindeki divide result:", additionResult)
+        
     }
     
     
@@ -194,24 +206,10 @@ class ViewController: UIViewController {
         
         minusButtonTapped = true
         
-        //        var minusResult = 0
+        getOperators(for: .Minus)
         
-        if firstClick == 1 {
-            
-            resultNumber = firstNumber
-            //            minusResult = Int(resultNumber)
-            print("FIRST CLICK'TE minus icindeki result number:", resultNumber, "first click:", firstClick)
-            
-        } else {
-            
-            resultNumber -= secondNumber
-            //            minusResult = Int(resultNumber)
-            print("SECOND CLICK'TE minus icindeki result number:", resultNumber, "else icindeki first click:", firstClick)
-        }
-        
-        //        resultNumber = Double(minusResult)
-        
-        print("minus icindeki result number:", resultNumber)
+        resultNumber = 0
+        resultLabel.text = "0"
         
     }
     
