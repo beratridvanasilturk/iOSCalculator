@@ -11,18 +11,18 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var resultLabel: UILabel!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     enum Operators {
         case addition
         case minus
         case percent
         case multiply
         case divide
+    }
+    
+    @IBOutlet var resultLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
     var firstNumber : Double = 0
@@ -38,6 +38,8 @@ class ViewController: UIViewController {
     var divideButtonTapped: Bool = false
     
     
+    var add = Operators.addition
+    add += res
     
     func equalType() {
         
@@ -180,18 +182,11 @@ class ViewController: UIViewController {
     
     @IBAction func additionButton(_ sender: UIButton) {
         
-        var additionEnum = Operators.addition
-        
-        let firstAdditionResult = resultNumber
-        resultNumber = 0
-        resultLabel.text = "0"
-    
-        
-        print("first addition result",firstAdditionResult)
-        
-        var secondAdditionResult = resultNumber
-        var totalAdditionResult = firstAdditionResult + secondAdditionResult
-        print("total addition result;", totalAdditionResult)
+//        additionButtonTapped == true
+
+//            additionEnum = resultNumber
+            resultNumber = 0
+            resultLabel.text = "0"
         
         // TODO: LOGIC YAPILACAK
         
@@ -211,8 +206,6 @@ class ViewController: UIViewController {
         //        resultNumber = Double(additionResult)
         //
         //            print("addition icindeki result number:", resultNumber)
-        
-    }
     
     
     @IBAction func zeroButton(_ sender: UIButton) {
@@ -464,18 +457,18 @@ class ViewController: UIViewController {
 //        }
     }
     
-    @IBAction func nineButton(_ sender: UIButton) {
-        
-        if resultNumber  == 0.0 {
-            resultString = "9"
-        } else {
-            resultString = "9" + "\(resultNumber)"
-        }
-        
-        resultLabel.text = resultString
-        resultNumber = Double(resultString) ?? 0
-        
-        
+@IBAction func nineButton(_ sender: UIButton) {
+    
+    if resultNumber  == 0.0 {
+        resultString = "9"
+    } else {
+        resultString = "9" + "\(resultNumber)"
+    }
+    
+    resultLabel.text = resultString
+    resultNumber = Double(resultString) ?? 0
+    
+}
 //        if firstClick == 0 {
 //
 //            let firstNineNumber = 9
@@ -490,17 +483,17 @@ class ViewController: UIViewController {
 //            resultLabel.text = "\(secondNineNumber)"
 //            firstClick += 1
 //        }
-    }
-    
-    @IBAction func dotButton(_ sender: UIButton) {
-        
-        var dot = "."
-        
-        var percentButton = percentButtonTapped
-        var multiplyButton = multiplyButtonTapped
-        // Logic hakkinda dusunulecek
-        
-    }
-    
+//    }
+//
+//    @IBAction func dotButton(_ sender: UIButton) {
+//
+//        var dot = "."
+//
+//        var percentButton = percentButtonTapped
+//        var multiplyButton = multiplyButtonTapped
+//        // Logic hakkinda dusunulecek
+//
+//    }
+//
 }
 
