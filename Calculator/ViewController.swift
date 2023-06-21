@@ -28,7 +28,7 @@ var multiplyButtonTapped: Bool = false
 var divideButtonTapped: Bool = false
 
 
-enum Operators: CaseIterable {
+enum Operators {
     case Addition
     case Minus
     case Percent
@@ -41,12 +41,14 @@ func getOperators(for calculateType: Operators) {
     
     switch calculateType {
         
-    case .Addition: additionResult += resultNumber
+    case .Addition:
+        additionResult += resultNumber
         print("Addition icindeki  result:", additionResult)
         
     case .Minus:
-        minusResult += resultNumber
-        print("Minus icindeki minus result:", additionResult)
+        // LOGIC PROBLEMLI
+        minusResult = minusResult + resultNumber
+        print("Minus icindeki minus result:", minusResult)
         
     case .Percent:
         percentResult += resultNumber
@@ -105,9 +107,53 @@ class ViewController: UIViewController {
         
         resultNumber = Double(resultString) ?? 0
         
-        resultLabel.text = "\(additionResult)"
+        if additionButtonTapped == true {
+            resultLabel.text = "\(additionResult)"
+            
+            print("equal buttondaki result number:", additionResult)
+        }
         
-        print("equal buttondaki result number:", additionResult)
+        if minusButtonTapped == true {
+            resultLabel.text = "\(minusResult)"
+            
+            print("equal buttondaki result number:", minusResult)
+        }
+        
+        if additionButtonTapped == true {
+            resultLabel.text = "\(additionResult)"
+            
+            print("equal buttondaki result number:", additionResult)
+        }
+        
+        if additionButtonTapped == true {
+            resultLabel.text = "\(additionResult)"
+            
+            print("equal buttondaki result number:", additionResult)
+        }
+        
+        if additionButtonTapped == true {
+            resultLabel.text = "\(additionResult)"
+            
+            print("equal buttondaki result number:", additionResult)
+        }
+        
+        if additionButtonTapped == true {
+            resultLabel.text = "\(additionResult)"
+            
+            print("equal buttondaki result number:", additionResult)
+        }
+        
+        if additionButtonTapped == true {
+            resultLabel.text = "\(additionResult)"
+            
+            print("equal buttondaki result number:", additionResult)
+        }
+        
+        if additionButtonTapped == true {
+            resultLabel.text = "\(additionResult)"
+            
+            print("equal buttondaki result number:", additionResult)
+        }
     }
     
     @IBAction func additionButton(_ sender: UIButton) {
