@@ -17,7 +17,7 @@ var resultString = ""
 
 var additionResult: Double = 0
 var minusResult: Double = 0
-var percentResult: Double = 0
+var percentResult: Double = 1
 var multiplyResult: Double = 1
 var divideResult: Double = 0
 
@@ -55,8 +55,10 @@ func getOperators(for calculateType: Operators) {
         print("Minus icindeki minus result:", minusResult)
         
     case .Percent:
-        percentResult += resultNumber
-        print("Percent icindeki percent result:", additionResult)
+        percentResult = ((resultNumber * percentResult) / 100)
+        
+        print("Percent icindeki percent result:", percentResult)
+        print("Percent icindeki result number:", resultNumber)
         
     case .Multiply:
         
@@ -116,25 +118,25 @@ class ViewController: UIViewController {
         if additionButtonTapped == true {
             resultLabel.text = "\(additionResult)"
             
-            print("equal buttondaki result number:", additionResult)
+            print("equal buttondaki aditionresult number:", additionResult)
         }
         
         if minusButtonTapped == true {
             resultLabel.text = "\(minusResult)"
             
-            print("equal buttondaki result number:", minusResult)
+            print("equal buttondaki minus result number:", minusResult)
         }
         
         if multiplyButtonTapped == true {
             resultLabel.text = "\(multiplyResult)"
             
-            print("equal buttondaki result number:", additionResult)
+            print("equal buttondaki multiply result number:", multiplyResult)
         }
         
-        if additionButtonTapped == true {
-            resultLabel.text = "\(additionResult)"
+        if percentButtonTapped == true {
+            resultLabel.text = "\(percentResult)"
             
-            print("equal buttondaki result number:", additionResult)
+            print("equal buttondaki percent result number:", percentResult)
         }
         
         if additionButtonTapped == true {
@@ -169,8 +171,8 @@ class ViewController: UIViewController {
         
         additionResult = 0.0
         minusResult = 0.0
-        percentResult = 0.0
-        multiplyResult = 0.0
+        percentResult = 1.0
+        multiplyResult = 1.0
         divideResult = 0.0
         
         additionButtonTapped = false
@@ -185,22 +187,10 @@ class ViewController: UIViewController {
         
         percentButtonTapped = true
         
+        getOperators(for: .Percent)
         
-        
-        if firstClick == 1 {
-            
-            resultNumber = firstNumber
-            
-            print("FIRST CLICK'TE percent icindeki result number:", resultNumber, "first click:", firstClick)
-            
-        } else {
-            
-            resultNumber = ((firstNumber * secondNumber) / 100)
-            
-            print("SECOND CLICK'TE percent icindeki result number:", resultNumber, "else icindeki first click:", firstClick)
-        }
-        
-        
+        resultNumber = 0
+        resultLabel.text = ""
         
         print("percent icindeki result number:", resultNumber)
         
