@@ -9,17 +9,14 @@
 
 import UIKit
 
-var firstNumber : Double = 0
-var secondNumber: Double = 0
 var resultNumber: Double = 0
-var firstClick = 0
 var resultString = ""
 
 var additionResult: Double = 0
 var minusResult: Double = 0
 var percentResult: Double = 1
 var multiplyResult: Double = 1
-var divideResult: Double = 0
+var divideResult: Double = 1
 
 var additionButtonTapped : Bool = false
 var minusButtonTapped: Bool = false
@@ -67,20 +64,21 @@ func getOperators(for calculateType: Operators) {
         print("Multiply icindeki result number:", resultNumber)
         
     case .Divide:
-        divideResult += resultNumber
-        print("Divide icindeki divide result:", additionResult)
+        
+        // TODO: Divide Logic Hatali
+        
+        divideResult /= divideResult / resultNumber
+        // esittir divideResilt = resultNumber
+        
+        print("Divide icindeki divide result: ", divideResult)
+        print("Divide icindeki result number: ", resultNumber)
         
     }
-    
-    
 }
-
 
 class ViewController: UIViewController {
     
     @IBOutlet var resultLabel: UILabel!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,41 +137,23 @@ class ViewController: UIViewController {
             print("equal buttondaki percent result number:", percentResult)
         }
         
-        if additionButtonTapped == true {
-            resultLabel.text = "\(additionResult)"
+        if divideButtonTapped == true {
+            resultLabel.text = "\(divideResult)"
             
-            print("equal buttondaki result number:", additionResult)
-        }
-        
-        if additionButtonTapped == true {
-            resultLabel.text = "\(additionResult)"
-            
-            print("equal buttondaki result number:", additionResult)
-        }
-        
-        if additionButtonTapped == true {
-            resultLabel.text = "\(additionResult)"
-            
-            print("equal buttondaki result number:", additionResult)
-        }
-        
-        if additionButtonTapped == true {
-            resultLabel.text = "\(additionResult)"
-            
-            print("equal buttondaki result number:", additionResult)
+            print("equal buttondaki divide result number:", divideResult)
         }
     }
     
     @IBAction func ceButton(_ sender: UIButton) {
         
         resultLabel.text = "0"
-        resultNumber = 0
+        resultNumber = 0.0
         
         additionResult = 0.0
         minusResult = 0.0
         percentResult = 1.0
         multiplyResult = 1.0
-        divideResult = 0.0
+        divideResult = 1.0
         
         additionButtonTapped = false
         minusButtonTapped = false
@@ -189,7 +169,7 @@ class ViewController: UIViewController {
         
         getOperators(for: .Percent)
         
-        resultNumber = 0
+        resultNumber = 0.0
         resultLabel.text = ""
         
         print("percent icindeki result number:", resultNumber)
@@ -203,7 +183,7 @@ class ViewController: UIViewController {
         getOperators(for: .Addition)
         
         
-        resultNumber = 0
+        resultNumber = 0.0
         resultLabel.text = "0"
 
     }
@@ -214,7 +194,7 @@ class ViewController: UIViewController {
         
         getOperators(for: .Multiply)
         
-        resultNumber = 0
+        resultNumber = 0.0
         resultLabel.text = "0"
     }
     
@@ -222,19 +202,10 @@ class ViewController: UIViewController {
         
         divideButtonTapped = true
         
-        if firstClick == 1 {
-            
-            resultNumber = firstNumber
-            print("FIRST CLICK'TE divide icindeki result number:", resultNumber, "first click:", firstClick)
-            
-        } else {
-            
-            resultNumber = firstNumber / secondNumber
-            print("SECOND CLICK'TE divide icindeki result number:", resultNumber, "else icindeki first click:", firstClick)
-        }
+        getOperators(for: .Divide)
         
-        print("divide icindeki result number:", resultNumber)
-        
+        resultNumber = 0.0
+        resultLabel.text = ""
     }
     
     @IBAction func minusButton(_ sender: UIButton) {
@@ -243,7 +214,7 @@ class ViewController: UIViewController {
         
         minusButtonTapped = true
         
-        resultNumber = 0
+        resultNumber = 0.0
         resultLabel.text = "0"
         
     }
