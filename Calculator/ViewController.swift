@@ -18,7 +18,7 @@ var resultString = ""
 var additionResult: Double = 0
 var minusResult: Double = 0
 var percentResult: Double = 0
-var multiplyResult: Double = 0
+var multiplyResult: Double = 1
 var divideResult: Double = 0
 
 var additionButtonTapped : Bool = false
@@ -59,8 +59,10 @@ func getOperators(for calculateType: Operators) {
         print("Percent icindeki percent result:", additionResult)
         
     case .Multiply:
-        multiplyResult += resultNumber
-        print("Multiply icindeki multiply result:", additionResult)
+        
+        multiplyResult *= resultNumber
+        print("Multiply icindeki multiply result:", multiplyResult)
+        print("Multiply icindeki result number:", resultNumber)
         
     case .Divide:
         divideResult += resultNumber
@@ -123,8 +125,8 @@ class ViewController: UIViewController {
             print("equal buttondaki result number:", minusResult)
         }
         
-        if additionButtonTapped == true {
-            resultLabel.text = "\(additionResult)"
+        if multiplyButtonTapped == true {
+            resultLabel.text = "\(multiplyResult)"
             
             print("equal buttondaki result number:", additionResult)
         }
@@ -158,18 +160,6 @@ class ViewController: UIViewController {
             
             print("equal buttondaki result number:", additionResult)
         }
-    }
-    
-    @IBAction func additionButton(_ sender: UIButton) {
-        
-        additionButtonTapped = true
-        
-        getOperators(for: .Addition)
-        
-        
-        resultNumber = 0
-        resultLabel.text = "0"
-
     }
     
     @IBAction func ceButton(_ sender: UIButton) {
@@ -216,24 +206,26 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func additionButton(_ sender: UIButton) {
+        
+        additionButtonTapped = true
+        
+        getOperators(for: .Addition)
+        
+        
+        resultNumber = 0
+        resultLabel.text = "0"
+
+    }
+    
     @IBAction func multiplyButton(_ sender: UIButton) {
         
         multiplyButtonTapped = true
         
-        if firstClick == 1 {
-            
-            resultNumber = firstNumber
-            print("FIRST CLICK'TE multiply icindeki result number:", resultNumber, "first click:", firstClick)
-            
-        } else {
-            
-            resultNumber = firstNumber * secondNumber
-            print("SECOND CLICK'TE multiply icindeki result number:", resultNumber, "else icindeki first click:", firstClick)
-        }
+        getOperators(for: .Multiply)
         
-        print("multiply icindeki result number:", resultNumber)
-        
-        
+        resultNumber = 0
+        resultLabel.text = "0"
     }
     
     @IBAction func divideButton(_ sender: UIButton) {
