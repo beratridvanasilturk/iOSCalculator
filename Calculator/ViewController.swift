@@ -11,7 +11,7 @@ import UIKit
 
 var firstNumber : Double = 0
 var secondNumber: Double = 0
-public var resultNumber: Double = 0
+var resultNumber: Double = 0
 var firstClick = 0
 var resultString = ""
 
@@ -46,8 +46,12 @@ func getOperators(for calculateType: Operators) {
         print("Addition icindeki  result:", additionResult)
         
     case .Minus:
-        // LOGIC PROBLEMLI
-        minusResult = minusResult + resultNumber
+    
+        minusResult = -minusResult - resultNumber
+        
+        print(resultNumber, ".Minus icindeki result number")
+
+        
         print("Minus icindeki minus result:", minusResult)
         
     case .Percent:
@@ -162,6 +166,7 @@ class ViewController: UIViewController {
         
         getOperators(for: .Addition)
         
+        
         resultNumber = 0
         resultLabel.text = "0"
 
@@ -171,10 +176,12 @@ class ViewController: UIViewController {
         
         resultLabel.text = "0"
         resultNumber = 0
-        firstClick = 0
-        firstNumber = 0.0
-        secondNumber = 0.0
+        
         additionResult = 0.0
+        minusResult = 0.0
+        percentResult = 0.0
+        multiplyResult = 0.0
+        divideResult = 0.0
         
         additionButtonTapped = false
         minusButtonTapped = false
@@ -250,9 +257,9 @@ class ViewController: UIViewController {
     
     @IBAction func minusButton(_ sender: UIButton) {
         
-        minusButtonTapped = true
-        
         getOperators(for: .Minus)
+        
+        minusButtonTapped = true
         
         resultNumber = 0
         resultLabel.text = "0"
