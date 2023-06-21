@@ -18,6 +18,8 @@ var percentResult: Double = 1
 var multiplyResult: Double = 1
 var divideResult: Double = 1
 
+var firstClickInDivide = 0
+
 var additionButtonTapped : Bool = false
 var minusButtonTapped: Bool = false
 var percentButtonTapped: Bool = false
@@ -67,7 +69,13 @@ func getOperators(for calculateType: Operators) {
         
         // TODO: Divide Logic Hatali
         
-        divideResult /= divideResult / resultNumber
+        print(divideResult, ": divide result")
+     
+        if firstClickInDivide == 0 {
+            divideResult = resultNumber
+        } else {
+            divideResult /= resultNumber
+        }
         // esittir divideResilt = resultNumber
         
         print("Divide icindeki divide result: ", divideResult)
@@ -155,6 +163,8 @@ class ViewController: UIViewController {
         multiplyResult = 1.0
         divideResult = 1.0
         
+        firstClickInDivide = 0
+        
         additionButtonTapped = false
         minusButtonTapped = false
         percentButtonTapped = false
@@ -202,10 +212,12 @@ class ViewController: UIViewController {
         
         divideButtonTapped = true
         
+        
         getOperators(for: .Divide)
         
         resultNumber = 0.0
         resultLabel.text = ""
+        firstClickInDivide += 1
     }
     
     @IBAction func minusButton(_ sender: UIButton) {
