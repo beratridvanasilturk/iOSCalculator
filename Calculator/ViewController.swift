@@ -152,6 +152,7 @@ func getOperators(for calculateType: Operators) {
                 
                 print("equal buttondaki divide result number:", divideResult)
             }
+            
         }
         
         @IBAction func ceButton(_ sender: UIButton) {
@@ -172,6 +173,7 @@ func getOperators(for calculateType: Operators) {
             percentButtonTapped = false
             multiplyButtonTapped = false
             divideButtonTapped = false
+            dotButtonTapped = false
             
         }
         
@@ -181,6 +183,7 @@ func getOperators(for calculateType: Operators) {
             
             getOperators(for: .Percent)
             
+            dotButtonTapped = false
             resultNumber = 0.0
             resultLabel.text = ""
             
@@ -194,7 +197,7 @@ func getOperators(for calculateType: Operators) {
             
             getOperators(for: .Addition)
             
-            
+            dotButtonTapped = false
             resultNumber = 0.0
             resultLabel.text = "0"
             
@@ -206,6 +209,7 @@ func getOperators(for calculateType: Operators) {
             
             getOperators(for: .Multiply)
             
+            dotButtonTapped = false
             resultNumber = 0.0
             resultLabel.text = "0"
         }
@@ -217,6 +221,7 @@ func getOperators(for calculateType: Operators) {
             
             getOperators(for: .Divide)
             
+            dotButtonTapped = false
             resultNumber = 0.0
             resultLabel.text = ""
             firstClickInDivide += 1
@@ -228,6 +233,7 @@ func getOperators(for calculateType: Operators) {
             
             minusButtonTapped = true
             
+            dotButtonTapped = false
             resultNumber = 0.0
             resultLabel.text = "0"
             
@@ -245,17 +251,15 @@ func getOperators(for calculateType: Operators) {
                     resultString = "0."
                 resultLabel.text = resultString
                 } else {
-                    if resultLabel.text?.range(of: ".") == nil {
+                    if resultString.range(of: ".") == nil {
                         
-                        resultString = resultString + "."
-                        resultLabel.text! = resultString
+                        resultString = resultLabel.text! + "."
+//                        resultLabel.text! = resultString + "."
+//                        resultString = resultLabel.text!
                     }
                 }
                 resultLabel.text = resultString
                 
-                
-                print("in dot resultString",resultString)
-                print("in dot resultLab",resultLabel)
                 print("in dot resultNum",resultNumber)
             
         }
@@ -268,6 +272,10 @@ func getOperators(for calculateType: Operators) {
                 resultString = "0"
             } else {
                 resultString = "\(Int(resultNumber))" + "0"
+            }
+            
+            if dotButtonTapped == true {
+                resultString = "\(Int(resultNumber))" + "." + "0"
             }
             
             resultLabel.text = resultString
@@ -283,6 +291,10 @@ func getOperators(for calculateType: Operators) {
                 resultString = "\(Int(resultNumber))" + "1"
             }
             
+            if dotButtonTapped == true {
+                resultString = "\(Int(resultNumber))" + "." + "1"
+            }
+            
             resultLabel.text = resultString
             resultNumber = Double(resultString) ?? 0
             
@@ -294,6 +306,10 @@ func getOperators(for calculateType: Operators) {
                 resultString = "2"
             } else {
                 resultString = "\(Int(resultNumber))" + "2"
+            }
+            
+            if dotButtonTapped == true {
+                resultString = "\(Int(resultNumber))" + "." + "2"
             }
             
             resultLabel.text = resultString
@@ -309,8 +325,13 @@ func getOperators(for calculateType: Operators) {
                 resultString = "\(Int(resultNumber))" + "3"
             }
             
+            if dotButtonTapped == true {
+                resultString = "\(Int(resultNumber))" + "." + "3"
+            }
+            
             resultLabel.text = resultString
             resultNumber = Double(resultString) ?? 0
+            
             
         }
         
@@ -320,6 +341,10 @@ func getOperators(for calculateType: Operators) {
                 resultString = "4"
             } else {
                 resultString = "\(Int(resultNumber))" + "4"
+            }
+            
+            if dotButtonTapped == true {
+                resultString = "\(Int(resultNumber))" + "." + "4"
             }
             
             resultLabel.text = resultString
@@ -335,6 +360,10 @@ func getOperators(for calculateType: Operators) {
                 resultString = "\(Int(resultNumber))" + "5"
             }
             
+            if dotButtonTapped == true {
+                resultString = "\(Int(resultNumber))" + "." + "5"
+            }
+            
             resultLabel.text = resultString
             resultNumber = Double(resultString) ?? 0
             
@@ -346,6 +375,10 @@ func getOperators(for calculateType: Operators) {
                 resultString = "6"
             } else {
                 resultString = "\(Int(resultNumber))" + "6"
+            }
+            
+            if dotButtonTapped == true {
+                resultString = "\(Int(resultNumber))" + "." + "6"
             }
             
             resultLabel.text = resultString
@@ -361,6 +394,11 @@ func getOperators(for calculateType: Operators) {
                 resultString = "\(Int(resultNumber))" + "7"
             }
             
+            if dotButtonTapped == true {
+                resultString = "\(Int(resultNumber))" + "." + "7"
+            }
+            
+            
             resultLabel.text = resultString
             resultNumber = Double(resultString) ?? 0
             
@@ -374,6 +412,10 @@ func getOperators(for calculateType: Operators) {
                 resultString = "\(Int(resultNumber))" + "8"
             }
             
+            if dotButtonTapped == true {
+                resultString = "\(Int(resultNumber))" + "." + "8"
+            }
+            
             resultLabel.text = resultString
             resultNumber = Double(resultString) ?? 0
             
@@ -385,6 +427,10 @@ func getOperators(for calculateType: Operators) {
                 resultString = "9"
             } else {
                 resultString = "\(Int(resultNumber))" + "9"
+            }
+            
+            if dotButtonTapped == true {
+                resultString = "\(Int(resultNumber))" + "." + "9"
             }
             
             resultLabel.text = resultString
