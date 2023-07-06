@@ -5,13 +5,20 @@
 //  Created by Berat Rıdvan Asiltürk on 18.06.2023.
 //
 
-// TODO: DOT 'tan sonra basamak ekleme hatasi duzeltilmeli
-
 import UIKit
 
+enum Operators {
+    case Addition
+    case Minus
+    case Percent
+    case Multiply
+    case Divide
+    case Dot
+}
+
+// MARK: Variables
 var resultNumber: Double = 0
 var resultString = ""
-
 var additionResult: Double = 0
 var minusResult: Double = 0
 var percentResult: Double = 1
@@ -27,72 +34,66 @@ var multiplyButtonTapped = false
 var divideButtonTapped = false
 var dotButtonTapped = false
 
-enum Operators {
-    case Addition
-    case Minus
-    case Percent
-    case Multiply
-    case Divide
-    case Dot
-}
-
-func getOperators(for calculateType: Operators) {
-    
-    switch calculateType {
-        
-    case .Addition:
-        
-        additionResult += resultNumber
-        
-        print("Addition icindeki  result:", additionResult)
-        
-    case .Minus:
-        
-        minusResult = -minusResult - resultNumber
-        
-        print("Minus icindeki minus result:", minusResult)
-        print("Minus icindeki result number:", resultNumber)
-        
-    case .Percent:
-        
-        percentResult = ((resultNumber * percentResult) / 100)
-        
-        print("Percent icindeki percent result:", percentResult)
-        print("Percent icindeki result number:", resultNumber)
-        
-    case .Multiply:
-        
-        multiplyResult *= resultNumber
-        print("Multiply icindeki multiply result:", multiplyResult)
-        print("Multiply icindeki result number:", resultNumber)
-        
-    case .Divide:
-        
-        if firstClickInDivide == 0 {
-            
-            divideResult = resultNumber
-            
-        } else {
-            
-            divideResult /= resultNumber
-        }
-        
-        print("Divide icindeki divide result: ", divideResult)
-        print("Divide icindeki result number: ", resultNumber)
-        
-    case .Dot: break
-        
-    }
-}
-
+//MARK: Classes
 class ViewController: UIViewController {
     
+    //MARK: IBOutlets
     @IBOutlet var resultLabel: UILabel!
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
+    }
+    
+    //MARK: Functions
+    // Every math-function button works in the Operators Enum
+    func getOperators(for calculateType: Operators) {
         
+        switch calculateType {
+            
+        case .Addition:
+            
+            additionResult += resultNumber
+            
+            print("Addition icindeki  result:", additionResult)
+            
+        case .Minus:
+            
+            minusResult = -minusResult - resultNumber
+            
+            print("Minus icindeki minus result:", minusResult)
+            print("Minus icindeki result number:", resultNumber)
+            
+        case .Percent:
+            
+            percentResult = ((resultNumber * percentResult) / 100)
+            
+            print("Percent icindeki percent result:", percentResult)
+            print("Percent icindeki result number:", resultNumber)
+            
+        case .Multiply:
+            
+            multiplyResult *= resultNumber
+            
+            print("Multiply icindeki multiply result:", multiplyResult)
+            print("Multiply icindeki result number:", resultNumber)
+            
+        case .Divide:
+            
+            if firstClickInDivide == 0 {
+                
+                divideResult = resultNumber
+                
+            } else {
+                
+                divideResult /= resultNumber
+            }
+            
+            print("Divide icindeki divide result: ", divideResult)
+            print("Divide icindeki result number: ", resultNumber)
+            
+        case .Dot: break
+            
+        }
     }
     
     func equalType() {
@@ -122,6 +123,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //MARK: IBActions
     @IBAction func equalButton(_ sender: UIButton) {
         
         equalType()
@@ -163,7 +165,6 @@ class ViewController: UIViewController {
     @IBAction func ceButton(_ sender: UIButton) {
         
         resultLabel.text = "0"
-        
         resultNumber = 0.0
         additionResult = 0.0
         minusResult = 0.0
@@ -247,6 +248,7 @@ class ViewController: UIViewController {
         
     }
     
+    //  For more functionalty we can improve the dotButton but in this case the dotButton works with only a dot.
     @IBAction func dotButton(_ sender: UIButton) {
         
         dotButtonTapped = true
@@ -270,6 +272,7 @@ class ViewController: UIViewController {
         
     }
     
+    // For calculate functionalty we are setting each number buttons in resultStrings
     @IBAction func zeroButton(_ sender: UIButton) {
         
         
@@ -503,4 +506,3 @@ class ViewController: UIViewController {
         
     }
 }
-
