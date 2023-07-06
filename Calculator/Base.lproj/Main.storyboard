@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <accessibilityOverrides/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,218 +14,346 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prP-Oe-f8a">
-                                <rect key="frame" x="16" y="76" width="361" height="194"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prP-Oe-f8a">
+                                <rect key="frame" x="16" y="76" width="340" height="202"/>
                                 <color key="backgroundColor" systemColor="systemMintColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMe-6d-Vec">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMe-6d-Vec">
                                 <rect key="frame" x="291" y="490" width="86" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.43137254899999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="-"/>
+                                <buttonConfiguration key="configuration" style="plain" title="-">
+                                    <fontDescription key="titleFontDescription" name="AlNile-Bold" family="Al Nile" pointSize="22"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="minusButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y91-4z-ylx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCH-mj-uyh">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCH-mj-uyh">
                                 <rect key="frame" x="291" y="388" width="86" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.43137254899999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="x"/>
+                                <buttonConfiguration key="configuration" style="plain" title="x">
+                                    <fontDescription key="titleFontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="22"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="multiplyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iUo-o3-cJO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzn-XZ-VoD">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzn-XZ-VoD">
                                 <rect key="frame" x="16" y="694" width="122" height="124"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="124" id="MIs-nx-dwk"/>
+                                    <constraint firstAttribute="width" constant="122" id="Z2U-os-czj"/>
+                                </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="0"/>
+                                <buttonConfiguration key="configuration" style="plain" title="0">
+                                    <fontDescription key="titleFontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="22"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="zeroButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gcu-G5-hGj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agm-aE-e7K">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agm-aE-e7K">
                                 <rect key="frame" x="270" y="694" width="107" height="124"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="J3A-ND-9nl"/>
+                                    <constraint firstAttribute="height" constant="124" id="UuX-j3-VUi"/>
+                                </constraints>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="="/>
+                                <buttonConfiguration key="configuration" style="plain" title="=">
+                                    <fontDescription key="titleFontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="22"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="equalButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YDj-UK-YH0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xki-H2-TPn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xki-H2-TPn">
                                 <rect key="frame" x="291" y="592" width="86" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.43137254899999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="+"/>
+                                <buttonConfiguration key="configuration" style="plain" title="+">
+                                    <fontDescription key="titleFontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="22"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="additionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y2U-0R-FEL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHK-dA-e0N">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHK-dA-e0N">
                                 <rect key="frame" x="197" y="592" width="86" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="3"/>
+                                <buttonConfiguration key="configuration" style="plain" title="3">
+                                    <fontDescription key="titleFontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="22"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="threeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="agY-F1-Mgi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vB2-aD-kOY">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vB2-aD-kOY">
                                 <rect key="frame" x="197" y="490" width="86" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="6"/>
+                                <buttonConfiguration key="configuration" style="plain" title="6">
+                                    <fontDescription key="titleFontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="22"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="sixButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mRP-4Q-uRq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="506-Ri-WR4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="506-Ri-WR4">
                                 <rect key="frame" x="197" y="388" width="86" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="9"/>
+                                <buttonConfiguration key="configuration" style="plain" title="9">
+                                    <fontDescription key="titleFontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="22"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="nineButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s1i-jq-Tka"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RwX-Vu-cHe">
-                                <rect key="frame" x="197" y="278" width="86" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RwX-Vu-cHe">
+                                <rect key="frame" x="197" y="286" width="86" height="94"/>
                                 <color key="backgroundColor" red="1" green="0.43137254899999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="1pR-W2-lRt"/>
+                                    <constraint firstAttribute="width" constant="86" id="DrJ-5a-4eQ"/>
+                                </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="%"/>
+                                <buttonConfiguration key="configuration" style="plain" title="%">
+                                    <fontDescription key="titleFontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="22"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="percentButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ghE-fN-y91"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Tt-Sy-eIl">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Tt-Sy-eIl">
                                 <rect key="frame" x="103" y="388" width="86" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="8"/>
+                                <buttonConfiguration key="configuration" style="plain" title="8">
+                                    <fontDescription key="titleFontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="22"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="eightButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cC1-CQ-EY4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17V-3X-K9w">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17V-3X-K9w">
                                 <rect key="frame" x="103" y="490" width="86" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="5"/>
+                                <buttonConfiguration key="configuration" style="plain" title="5">
+                                    <fontDescription key="titleFontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="22"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="fiveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kCD-8h-Ud8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XxL-h1-PMi">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XxL-h1-PMi">
                                 <rect key="frame" x="103" y="592" width="86" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="5xk-Xt-nqI"/>
+                                    <constraint firstAttribute="width" constant="86" id="cUP-nO-IC4"/>
+                                </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="2"/>
+                                <buttonConfiguration key="configuration" style="plain" title="2">
+                                    <fontDescription key="titleFontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="22"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="twoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FJn-Ie-OJ7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wry-T0-OyU">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wry-T0-OyU">
                                 <rect key="frame" x="16" y="592" width="79" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="9CC-zm-T7a"/>
+                                    <constraint firstAttribute="height" constant="94" id="yoC-Ek-6Eu"/>
+                                </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="1"/>
+                                <buttonConfiguration key="configuration" style="plain" title="1">
+                                    <fontDescription key="titleFontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="22"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="oneButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IeS-bW-ayz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ka-Mu-j6j">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ka-Mu-j6j">
                                 <rect key="frame" x="16" y="490" width="79" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="NXP-sO-Uwp"/>
+                                    <constraint firstAttribute="height" constant="94" id="wcm-G2-oo9"/>
+                                </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="4"/>
+                                <buttonConfiguration key="configuration" style="plain" title="4">
+                                    <fontDescription key="titleFontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="22"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="fourButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fY4-Og-Yj8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anW-hJ-Wa3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anW-hJ-Wa3">
                                 <rect key="frame" x="16" y="388" width="79" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="N7M-Mq-dHU"/>
+                                    <constraint firstAttribute="height" constant="94" id="rE5-kS-Kai"/>
+                                </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="7"/>
+                                <buttonConfiguration key="configuration" style="plain" title="7">
+                                    <fontDescription key="titleFontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="22"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="sevenButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sK6-j1-ifA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCw-IT-OQs">
-                                <rect key="frame" x="16" y="278" width="173" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCw-IT-OQs">
+                                <rect key="frame" x="16" y="286" width="173" height="94"/>
                                 <color key="backgroundColor" red="1" green="0.43137254899999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="TBY-FD-o7U"/>
+                                    <constraint firstAttribute="width" constant="173" id="s6c-Zk-p9m"/>
+                                </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="AC"/>
+                                <buttonConfiguration key="configuration" style="plain" title="AC">
+                                    <fontDescription key="titleFontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="22"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="ceButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ypO-uW-cig"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADS-nL-0Kx">
-                                <rect key="frame" x="291" y="278" width="86" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADS-nL-0Kx">
+                                <rect key="frame" x="291" y="286" width="86" height="94"/>
                                 <color key="backgroundColor" red="1" green="0.43137254899999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="/"/>
+                                <buttonConfiguration key="configuration" style="plain" title="/">
+                                    <fontDescription key="titleFontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="22"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="divideButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v8r-he-ZnR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsV-pV-5es">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsV-pV-5es">
                                 <rect key="frame" x="146" y="694" width="116" height="124"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="116" id="H36-DK-eRo"/>
+                                    <constraint firstAttribute="height" constant="124" id="JS7-pO-S1G"/>
+                                </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="."/>
+                                <buttonConfiguration key="configuration" style="plain" title=".">
+                                    <fontDescription key="titleFontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="22"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="dotButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jdY-9L-Zpw"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                        <constraints>
+                            <constraint firstItem="gCw-IT-OQs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="0zg-sj-BJv"/>
+                            <constraint firstItem="XxL-h1-PMi" firstAttribute="width" secondItem="wry-T0-OyU" secondAttribute="width" multiplier="1.08861" id="2Nu-70-yd1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hsV-pV-5es" secondAttribute="bottom" constant="44" id="3aj-rb-z6m"/>
+                            <constraint firstItem="wry-T0-OyU" firstAttribute="top" secondItem="5Ka-Mu-j6j" secondAttribute="bottom" constant="8" id="6GF-Nm-dUU"/>
+                            <constraint firstItem="qzn-XZ-VoD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6ZT-r0-P6G"/>
+                            <constraint firstItem="vB2-aD-kOY" firstAttribute="height" secondItem="17V-3X-K9w" secondAttribute="height" id="7zo-XV-qbJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="prP-Oe-f8a" secondAttribute="trailing" constant="37" id="8qD-zK-lh0"/>
+                            <constraint firstItem="prP-Oe-f8a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="28" id="914-3Y-DOv"/>
+                            <constraint firstItem="8Tt-Sy-eIl" firstAttribute="leading" secondItem="anW-hJ-Wa3" secondAttribute="trailing" constant="8" symbolic="YES" id="ARG-RM-eho"/>
+                            <constraint firstItem="wry-T0-OyU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="CWg-yI-0rO"/>
+                            <constraint firstItem="8Tt-Sy-eIl" firstAttribute="top" secondItem="gCw-IT-OQs" secondAttribute="bottom" constant="8" id="D8i-aW-DEc"/>
+                            <constraint firstItem="cCH-mj-uyh" firstAttribute="leading" secondItem="506-Ri-WR4" secondAttribute="trailing" constant="8" id="DkL-aN-9rl"/>
+                            <constraint firstItem="506-Ri-WR4" firstAttribute="leading" secondItem="8Tt-Sy-eIl" secondAttribute="trailing" constant="8" symbolic="YES" id="FVJ-m4-0S5"/>
+                            <constraint firstItem="RwX-Vu-cHe" firstAttribute="top" secondItem="prP-Oe-f8a" secondAttribute="bottom" constant="8" id="GUv-Ea-rSZ"/>
+                            <constraint firstItem="xki-H2-TPn" firstAttribute="height" secondItem="HHK-dA-e0N" secondAttribute="height" id="HQn-cK-ehj"/>
+                            <constraint firstItem="vB2-aD-kOY" firstAttribute="leading" secondItem="17V-3X-K9w" secondAttribute="trailing" constant="8" symbolic="YES" id="Hbh-WQ-GJx"/>
+                            <constraint firstItem="gCw-IT-OQs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="JVU-gW-UV9"/>
+                            <constraint firstItem="17V-3X-K9w" firstAttribute="width" secondItem="5Ka-Mu-j6j" secondAttribute="width" multiplier="1.08861" id="KOX-SI-l7x"/>
+                            <constraint firstItem="506-Ri-WR4" firstAttribute="top" secondItem="RwX-Vu-cHe" secondAttribute="bottom" constant="8" id="LBn-d8-pog"/>
+                            <constraint firstItem="17V-3X-K9w" firstAttribute="top" secondItem="8Tt-Sy-eIl" secondAttribute="bottom" constant="8" id="MUD-8n-Hib"/>
+                            <constraint firstItem="cCH-mj-uyh" firstAttribute="top" secondItem="ADS-nL-0Kx" secondAttribute="bottom" constant="8" id="MaE-T0-l6M"/>
+                            <constraint firstItem="cCH-mj-uyh" firstAttribute="width" secondItem="506-Ri-WR4" secondAttribute="width" id="OHc-8y-gem"/>
+                            <constraint firstItem="HHK-dA-e0N" firstAttribute="width" secondItem="XxL-h1-PMi" secondAttribute="width" id="OKr-7d-lbM"/>
+                            <constraint firstItem="ADS-nL-0Kx" firstAttribute="leading" secondItem="RwX-Vu-cHe" secondAttribute="trailing" constant="8" symbolic="YES" id="PAN-9S-Smv"/>
+                            <constraint firstItem="HHK-dA-e0N" firstAttribute="height" secondItem="XxL-h1-PMi" secondAttribute="height" id="RFL-Kr-taj"/>
+                            <constraint firstItem="hsV-pV-5es" firstAttribute="leading" secondItem="qzn-XZ-VoD" secondAttribute="trailing" constant="8" symbolic="YES" id="RQA-Cd-tdl"/>
+                            <constraint firstItem="HHK-dA-e0N" firstAttribute="leading" secondItem="XxL-h1-PMi" secondAttribute="trailing" constant="8" symbolic="YES" id="TXe-ed-Lvi"/>
+                            <constraint firstItem="cMe-6d-Vec" firstAttribute="width" secondItem="vB2-aD-kOY" secondAttribute="width" id="W3P-U8-XEC"/>
+                            <constraint firstItem="RwX-Vu-cHe" firstAttribute="leading" secondItem="gCw-IT-OQs" secondAttribute="trailing" constant="8" id="WEd-gP-FOn"/>
+                            <constraint firstItem="506-Ri-WR4" firstAttribute="width" secondItem="8Tt-Sy-eIl" secondAttribute="width" id="Zd7-cl-2fF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ADS-nL-0Kx" secondAttribute="trailing" constant="16" id="Zgi-VS-yNo"/>
+                            <constraint firstItem="506-Ri-WR4" firstAttribute="height" secondItem="8Tt-Sy-eIl" secondAttribute="height" id="Zxu-C6-etq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cCH-mj-uyh" secondAttribute="trailing" constant="16" id="alB-iL-PqU"/>
+                            <constraint firstItem="cMe-6d-Vec" firstAttribute="leading" secondItem="vB2-aD-kOY" secondAttribute="trailing" constant="8" symbolic="YES" id="ang-aJ-GOM"/>
+                            <constraint firstItem="xki-H2-TPn" firstAttribute="leading" secondItem="HHK-dA-e0N" secondAttribute="trailing" constant="8" symbolic="YES" id="bQc-9N-dJh"/>
+                            <constraint firstItem="agm-aE-e7K" firstAttribute="top" secondItem="xki-H2-TPn" secondAttribute="bottom" constant="8" id="cba-UB-SGz"/>
+                            <constraint firstItem="vB2-aD-kOY" firstAttribute="top" secondItem="506-Ri-WR4" secondAttribute="bottom" constant="8" id="cdM-6g-51p"/>
+                            <constraint firstItem="ADS-nL-0Kx" firstAttribute="height" secondItem="RwX-Vu-cHe" secondAttribute="height" id="cvj-q1-AAb"/>
+                            <constraint firstItem="anW-hJ-Wa3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="dL8-wY-48e"/>
+                            <constraint firstItem="5Ka-Mu-j6j" firstAttribute="top" secondItem="anW-hJ-Wa3" secondAttribute="bottom" constant="8" id="dyU-Uz-LEd"/>
+                            <constraint firstItem="RwX-Vu-cHe" firstAttribute="leading" secondItem="gCw-IT-OQs" secondAttribute="trailing" constant="8" id="dzC-Tf-uPN"/>
+                            <constraint firstItem="prP-Oe-f8a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="dzX-OH-Dsl"/>
+                            <constraint firstItem="506-Ri-WR4" firstAttribute="leading" secondItem="8Tt-Sy-eIl" secondAttribute="trailing" constant="8" id="eEL-De-yrd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cMe-6d-Vec" secondAttribute="trailing" constant="16" id="gCb-Pz-1QE"/>
+                            <constraint firstItem="8Tt-Sy-eIl" firstAttribute="leading" secondItem="anW-hJ-Wa3" secondAttribute="trailing" constant="8" id="gUh-Vj-ffi"/>
+                            <constraint firstItem="ADS-nL-0Kx" firstAttribute="width" secondItem="RwX-Vu-cHe" secondAttribute="width" id="hSS-TR-Jfp"/>
+                            <constraint firstItem="xki-H2-TPn" firstAttribute="width" secondItem="HHK-dA-e0N" secondAttribute="width" id="hYA-6C-yIc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qzn-XZ-VoD" secondAttribute="bottom" constant="44" id="iWS-Y5-hmg"/>
+                            <constraint firstItem="XxL-h1-PMi" firstAttribute="leading" secondItem="wry-T0-OyU" secondAttribute="trailing" constant="8" symbolic="YES" id="idB-y0-m3O"/>
+                            <constraint firstItem="cMe-6d-Vec" firstAttribute="top" secondItem="cCH-mj-uyh" secondAttribute="bottom" constant="8" id="kx9-p4-LiB"/>
+                            <constraint firstItem="hsV-pV-5es" firstAttribute="width" secondItem="qzn-XZ-VoD" secondAttribute="width" multiplier="0.95082" id="lce-T8-XL6"/>
+                            <constraint firstItem="17V-3X-K9w" firstAttribute="height" secondItem="5Ka-Mu-j6j" secondAttribute="height" id="lj5-he-O64"/>
+                            <constraint firstItem="cCH-mj-uyh" firstAttribute="height" secondItem="506-Ri-WR4" secondAttribute="height" id="n7D-1r-KB3"/>
+                            <constraint firstItem="cMe-6d-Vec" firstAttribute="height" secondItem="vB2-aD-kOY" secondAttribute="height" id="nJh-wF-qdz"/>
+                            <constraint firstItem="agm-aE-e7K" firstAttribute="leading" secondItem="hsV-pV-5es" secondAttribute="trailing" constant="8" symbolic="YES" id="oJD-2I-mOC"/>
+                            <constraint firstItem="XxL-h1-PMi" firstAttribute="height" secondItem="wry-T0-OyU" secondAttribute="height" id="p0m-JI-rQH"/>
+                            <constraint firstItem="RwX-Vu-cHe" firstAttribute="leading" secondItem="gCw-IT-OQs" secondAttribute="trailing" constant="8" symbolic="YES" id="pWl-D7-Sp0"/>
+                            <constraint firstItem="qzn-XZ-VoD" firstAttribute="top" secondItem="XxL-h1-PMi" secondAttribute="bottom" constant="8" id="qON-yh-20M"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="agm-aE-e7K" secondAttribute="trailing" constant="16" id="s8S-MH-0hS"/>
+                            <constraint firstItem="agm-aE-e7K" firstAttribute="top" secondItem="HHK-dA-e0N" secondAttribute="bottom" constant="8" id="sDi-tF-w8f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="agm-aE-e7K" secondAttribute="bottom" constant="44" id="sXj-0W-PjH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hsV-pV-5es" secondAttribute="bottom" constant="44" id="sjJ-Ha-dCz"/>
+                            <constraint firstItem="17V-3X-K9w" firstAttribute="leading" secondItem="5Ka-Mu-j6j" secondAttribute="trailing" constant="8" symbolic="YES" id="uHq-3y-qxO"/>
+                            <constraint firstItem="qzn-XZ-VoD" firstAttribute="top" secondItem="wry-T0-OyU" secondAttribute="bottom" constant="8" id="vlL-4F-vlJ"/>
+                            <constraint firstItem="8Tt-Sy-eIl" firstAttribute="height" secondItem="anW-hJ-Wa3" secondAttribute="height" id="vsW-Tp-scg"/>
+                            <constraint firstItem="8Tt-Sy-eIl" firstAttribute="width" secondItem="anW-hJ-Wa3" secondAttribute="width" multiplier="1.08861" id="w6r-YM-7Yr"/>
+                            <constraint firstItem="XxL-h1-PMi" firstAttribute="top" secondItem="17V-3X-K9w" secondAttribute="bottom" constant="8" id="wqL-XA-3gJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xki-H2-TPn" secondAttribute="trailing" constant="16" id="x7C-As-sb3"/>
+                            <constraint firstItem="5Ka-Mu-j6j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="xQG-Tn-DIF"/>
+                            <constraint firstItem="xki-H2-TPn" firstAttribute="top" secondItem="cMe-6d-Vec" secondAttribute="bottom" constant="8" id="xrR-yR-Tep"/>
+                            <constraint firstItem="HHK-dA-e0N" firstAttribute="top" secondItem="vB2-aD-kOY" secondAttribute="bottom" constant="8" id="xsd-e4-VuS"/>
+                            <constraint firstItem="hsV-pV-5es" firstAttribute="height" secondItem="qzn-XZ-VoD" secondAttribute="height" id="yaG-O3-n9j"/>
+                            <constraint firstItem="vB2-aD-kOY" firstAttribute="width" secondItem="17V-3X-K9w" secondAttribute="width" id="ykp-Gp-NzW"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="resultLabel" destination="prP-Oe-f8a" id="UMp-bE-1at"/>
@@ -236,9 +365,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemMintColor">
             <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
